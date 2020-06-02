@@ -1,0 +1,27 @@
+<p>product-create works!</p>
+<div class="col-md-12">
+  <h3>Form create(update) product</h3>
+  <form class="col-md-12" [noValidate]="true" [formGroup]="form" (ngSubmit)="doSubmit()">
+    <div class="form-group" >
+        <label  for="code">Code:</label>
+        <input class="form-control" id="code" formControlName="code"/>
+    </div>
+    <div class="form-group" >
+      <label  for="name">Name:</label>
+      <input class="form-control" id="name" formControlName="name"/>
+    </div>
+    <div class="form-group">
+      <label   for="price">Price:</label>
+      <input class="form-control" id="price" formControlName="price"/>
+    </div>
+    <div class="form-group">
+      <label  for="desc">Description:</label>
+      <textarea class="form-control" id="desc" formControlName="desc" rows="3"></textarea>
+    </div>
+    <div>
+      <button class="btn btn-outline-primary btn-sm" type="submit" *ngIf="!isUpdate">Save</button>
+      <button class="btn btn-outline-primary btn-sm" type="submit" *ngIf="isUpdate">Update</button>
+      <button class="btn btn-sm" [routerLink]="['/product']">Cancel</button>
+    </div>
+  </form>
+</div>
